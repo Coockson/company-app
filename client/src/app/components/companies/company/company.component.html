@@ -1,0 +1,20 @@
+
+
+<a href="#" class="list-group-item clearfix">
+    <span class="pull-left">
+        <h4 class="list-group-item-heading">{{ company.name }}</h4>
+        <p class="list-group-item-text"><b>ID:</b> {{ company.id}}</p>
+        <p class="list-group-item-text"><b>Address:</b> {{ company.address}}</p>
+        <p class="list-group-item-text"><b>City:</b> {{ company.city}}</p>
+        <p class="list-group-item-text"><b>Country:</b> {{ company.country}}</p>
+        <p class="list-group-item-text"><b>Email:</b> {{ company.email}}</p>
+        <p class="list-group-item-text"><b>Phone Number:</b> {{ company.phone}}</p>
+    </span>
+    <span class="pull-right">
+        <input type="button" value="Edit" class="btn btn-warning" (click)="edit = !edit">
+        <input type="button" value="Delete" class="btn btn-danger" (click)="initiateDelete(company._id)">
+    </span>
+</a>
+ 
+
+
