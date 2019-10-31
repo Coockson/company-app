@@ -2,8 +2,8 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb+srv://db-user:db-pass@company-app-wdbd7.mongodb.net/test?retryWrites=true&w=majority',['companies'])
-
+//var db = mongojs('mongodb+srv://db-user:db-pass@company-app-wdbd7.mongodb.net/test?retryWrites=true&w=majority',['companies'])
+var db = mongojs('mongodb://mongo:27017', ['companies']);
 
 
 // Get All companies
