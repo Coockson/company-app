@@ -12,9 +12,9 @@ export class CompanyComponent implements OnInit {
 
   @Input() company : Company;
   edit : boolean;
+  ses = "zaze";
 
-  constructor(private companies :CompaniesComponent) {
-
+  constructor(private companies :CompaniesComponent, private companyService: CompanyService) {
     this.edit = false;
   }
 
@@ -23,6 +23,25 @@ export class CompanyComponent implements OnInit {
 
   initiateDelete(id){
     this.companies.deleteCompany(id);
+  }
+
+  updateCompany(){
+    
+    var tempCompany = {
+      //@ts-ignore
+      _id:this.company._id,
+      id  : this.company.id,
+      name: this.company.name,
+      address: this.company.address,
+      city : this.company.city,
+      country: this.company.country,
+      email: this.company.email,
+      phone: this.company.phone
+    }
+
+    this.companyService.updateCompany(tempCompany).subscribe(data => {
+      console.log(data);
+    });
   }
 
 }

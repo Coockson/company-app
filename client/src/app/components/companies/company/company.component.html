@@ -1,7 +1,7 @@
 
 
-<a href="#" class="list-group-item clearfix">
-    <span class="pull-left">
+<a href="#" class="list-group-item clearfix" *ngIf="!edit">
+    <span class="pull-left" >
         <h4 class="list-group-item-heading">{{ company.name }}</h4>
         <p class="list-group-item-text"><b>ID:</b> {{ company.id}}</p>
         <p class="list-group-item-text"><b>Address:</b> {{ company.address}}</p>
@@ -14,6 +14,31 @@
         <input type="button" value="Edit" class="btn btn-warning" (click)="edit = !edit">
         <input type="button" value="Delete" class="btn btn-danger" (click)="initiateDelete(company._id)">
     </span>
+</a>
+<a href="#" class="list-group-item clearfix" *ngIf="edit">
+    <form class="form-horizontal " (submit)="updateCompany()">
+        <div class="col-xs-5 form-group">
+            <h5>Name</h5><input type="text" [(ngModel)]="company.name" name="name" class="form-control"  placeholder="Add Name...">    
+
+            <h5>ID</h5><input type="text" [(ngModel)]="company.id" name="id" class="form-control" placeholder="Add ID...">    
+            
+            <h5>Address</h5><input type="text" [(ngModel)]="company.address" id="addr" name="title" class="form-control" placeholder="Add Address...">  
+            
+            <h5>City</h5><input type="text" [(ngModel)]="company.city" name="city" class="form-control" placeholder="Add City...">  
+            
+            <h5>Country</h5><input type="text" [(ngModel)]="company.country" name="country" class="form-control" placeholder="Add Country...">  
+            
+            <h5>Email</h5><input type="text" [(ngModel)]="company.email" name="email" class="form-control" placeholder="Add Email...">  
+            
+            <h5>Phone</h5><input type="text" [(ngModel)]="company.phone" name="phone" class="form-control" placeholder="Add Phone...">  
+                
+        </div>
+        <div class="col-xs-2">
+                <button class="btn btn-primary" (click)="submit">Update</button> 
+        </div>
+    </form>
+        
+        
 </a>
  
 
