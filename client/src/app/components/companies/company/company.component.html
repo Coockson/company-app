@@ -17,8 +17,8 @@
     </div>
 </div>
 </div>
-<div class="clearfix" *ngIf="edit">
-    <form class="form-horizontal " (ngSubmit)="updateCompany()" [formGroup]="form">
+<div class="well clearfix" *ngIf="edit">
+    <form (ngSubmit)="updateCompany()" [formGroup]="form">
         <div class="col-xs-5 form-group">
             <div class="form-group">
                 <div class="col-sm-12">
