@@ -13,7 +13,7 @@ export class CompanyService {
   }
 
   getCompanies() {
-    return this.http.get("/api/companies")
+    return this.http.get("/api/companies");
   }
 
   addCompany(newCompany){

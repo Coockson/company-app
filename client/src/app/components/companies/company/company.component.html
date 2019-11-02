@@ -1,22 +1,24 @@
 
 
 <div class="well clearfix" *ngIf="!edit">
-<div class="company_div">
-    <div class="company_info" >
-        <h4 class="list-group-item-heading">{{ company.name }}</h4> <!---li yap-->
-        <p class="list-group-item-text"><b>ID:</b> {{ company.id}}</p>
-        <p class="list-group-item-text"><b>Address:</b> {{ company.address}}</p>
-        <p class="list-group-item-text"><b>City:</b> {{ company.city}}</p>
-        <p class="list-group-item-text"><b>Country:</b> {{ company.country}}</p>
-        <p *ngIf="company.email" class="list-group-item-text"><b>Email:</b> {{ company.email}}</p>
-        <p *ngIf="company.phone" class="list-group-item-text"><b>Phone Number:</b> {{ company.phone}}</p>
-    </div>
-    <div class="company_buttons">
-        <input type="button" value="Edit" class="btn btn-primary " (click)="edit = !edit">
-        <input type="button" value="Delete" class="btn btn-primary " (click)="initiateDelete(company._id)">
+    <div class="company_div">
+        <div class="company_info" >
+            <h4 class="list-group-item-heading">{{ company.name }}</h4> <!---li yap-->
+            <p *ngIf="details" class="list-group-item-text"><b>ID:</b> {{ company.id}}</p>
+            <p *ngIf="details" class="list-group-item-text"><b>Address:</b> {{ company.address}}</p>
+            <p *ngIf="details" class="list-group-item-text"><b>City:</b> {{ company.city}}</p>
+            <p *ngIf="details" class="list-group-item-text"><b>Country:</b> {{ company.country}}</p>
+            <p *ngIf="details && company.email" class="list-group-item-text"><b>Email:</b> {{ company.email}}</p>
+            <p *ngIf="details && company.phone" class="list-group-item-text"><b>Phone Number:</b> {{ company.phone}}</p>
+        </div>
+        <div class="company_buttons">
+            <input type="button" value="Details" class="btn btn-primary " (click)="details = !details">
+            <input type="button" value="Edit" class="btn btn-primary " (click)="edit = !edit">
+            <input type="button" value="Delete" class="btn btn-danger " (click)="initiateDelete(company._id)">
+        </div>
     </div>
 </div>
-</div>
+
 <div class="well clearfix" *ngIf="edit">
     <form (ngSubmit)="updateCompany()" [formGroup]="form">
         <div class="col-xs-5 form-group">
@@ -64,12 +66,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-2">
-                <button class="btn btn-primary" [disabled]="!form.valid" (click)="submit">Update</button> 
-        </div>
+        <div class="col-xs-5">
+            <button class="btn btn-primary" [disabled]="!form.valid" (click)="submit">Update</button> 
+            <button class="btn btn-primary"  (click)="edit = !edit">Cancel</button> 
+        </div>        
     </form>
-        
-        
+     
 </div>
  
 

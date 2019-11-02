@@ -14,10 +14,12 @@ export class CompanyComponent implements OnInit {
   @Input() company : Company;
   edit : boolean;
   form : FormGroup;
+  details: boolean;
 
 
   constructor(private companies :CompaniesComponent, private companyService: CompanyService, private formBuilder: FormBuilder) {
     this.edit = false;
+    this.details = false;
   }
 
   ngOnInit() {
@@ -37,7 +39,6 @@ export class CompanyComponent implements OnInit {
   }
 
   updateCompany(){
-    console.log("selam");
     this.edit = !this.edit;
     var tempCompany = {
       //@ts-ignore
