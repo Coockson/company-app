@@ -36,7 +36,7 @@ export class CompanyService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
     console.log(company);
-    return this.http.put("/api/company/"+company._id,company,{headers: headers});
+    return this.http.put("/api/company/"+company._id, JSON.stringify(company), {headers: headers});
   }
 }
 

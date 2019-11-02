@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CompaniesComponent } from './components/companies/companies.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CompanyComponent } from './components/companies/company/company.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

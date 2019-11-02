@@ -2,8 +2,8 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-//var db = mongojs('mongodb+srv://db-user:db-pass@company-app-wdbd7.mongodb.net/test?retryWrites=true&w=majority',['companies'])
-var db = mongojs('mongodb://mongo:27017', ['companies']);
+var db = mongojs('mongodb+srv://db-user:db-pass@company-app-wdbd7.mongodb.net/test?retryWrites=true&w=majority',['companies'])
+//var db = mongojs('mongodb://mongo:27017', ['companies']);
 
 
 // Get All companies
@@ -90,7 +90,7 @@ router.put('/company/:id', function(req, res, next){
         var newvalues = {
             $set: updCompany
         }
-        db.companies.updateOne({ _id: mongojs.ObjectID(req.params.id) },newvalues,{ upsert: true });;
+        db.companies.update({ _id: mongojs.ObjectID(req.params.id) },newvalues,{ upsert: true });;
     
     }
 });

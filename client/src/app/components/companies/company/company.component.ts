@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Company } from '../company.model';
 import { CompanyService } from '../../../services/company.service';
 import { CompaniesComponent } from '../../companies/companies.component'
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-company',
@@ -26,7 +27,7 @@ export class CompanyComponent implements OnInit {
   }
 
   updateCompany(){
-    
+    console.log("selam");
     var tempCompany = {
       //@ts-ignore
       _id:this.company._id,
@@ -39,9 +40,7 @@ export class CompanyComponent implements OnInit {
       phone: this.company.phone
     }
 
-    this.companyService.updateCompany(tempCompany).subscribe(data => {
-      console.log(data);
-    });
+    this.companyService.updateCompany(tempCompany).subscribe();
   }
 
 }

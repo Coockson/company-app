@@ -7,13 +7,13 @@ export class Company {
     public email: string;
     public phone: string;
 
-    constructor(id: number, name: string, address: string, city: string, country: string, email: string,phone: string){
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.city = city;
-        this.country = country;
-        this.email = email;
-        this.phone = phone;
+    constructor(){
+        this.id = 0;
+        this.name = "";
+        this.address = "";
+        this.city = "";
+        this.country = "";
+        this.email = "";
+        this.phone = "";
     }
 }

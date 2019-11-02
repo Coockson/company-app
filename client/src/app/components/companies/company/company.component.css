@@ -1,0 +1,19 @@
+.company_info{
+    float: left;
+    margin-right: 2%;
+    width: 75%;
+}
+
+.company_button{
+    float: left;
+    width: 20%;
+
+}
+
+.btn-primary{
+    margin-left: 1% ;
+}
+
+.company_div{
+    width: 100%;
+}
