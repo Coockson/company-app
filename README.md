@@ -31,4 +31,14 @@ The web JSON web service is hosted on the extention /api/ on the root webpage. T
 - **curl command example:** curl --data "id=1&name=curlcompany&address=curladdress&city=aarhus&country=denmark" https://company-app-fullstack.herokuapp.com/api/company
   - The command above returns the sent json back when successfull
   
+### DELETE a company
+- **URL:** /api/company/{mongo id}
+- **curl command example:** curl -X "DELETE" https://company-app-fullstack.herokuapp.com/api/company/5dbdf47a2db7c40010222ec2
+
+### PUT update a company
+- **URL:** /api/company/{mongo id}
+- **curl command example:** curl -X "PUT" -d "id=1&name=curlcompany&address=curladdress&city=aarhus&country=denmark" https://company-app-fullstack.herokuapp.com/api/company/5dbdf47a2db7c40010222ec2
+
+
+
 
