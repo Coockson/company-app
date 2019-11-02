@@ -3,22 +3,6 @@
     <div class="col-xs-6 " *ngIf="show">
         <form class="well " (ngSubmit)="addCompany($event)" [formGroup]="form">      
             <div class="row">
-                <!---<div class="col-xs-5 form-group">
-                    <h5>Name</h5><input type="text" required [(ngModel)]="company.name" name="name" class="form-control" placeholder="Add Name..." required> 
-                    
-                    <h5>ID</h5><input type="text" [(ngModel)]="company.id" name="id" class="form-control" placeholder="Add ID...">    
-                    
-                    <h5>Address</h5><input type="text" [(ngModel)]="company.address" name="address" class="form-control" placeholder="Add Address...">  
-                    
-                    <h5>City</h5><input type="text" [(ngModel)]="company.city" name="city" class="form-control" placeholder="Add City...">  
-                    
-                    <h5>Country</h5><input type="text" [(ngModel)]="company.country" name="country" class="form-control" placeholder="Add Country...">  
-                    
-                    <h5>Email</h5><input type="text" [(ngModel)]="company.email" name="email" class="form-control" placeholder="Add Email...">  
-                    
-                    <h5>Phone</h5><input type="text" [(ngModel)]="company.phone" name="phone" class="form-control" placeholder="Add Phone...">  
-                      
-                </div> --->
 
                 <div class="form-group">
                         <div class="col-sm-12">
@@ -73,8 +57,7 @@
         </form>
     </div>
     <div class="col-xs-6 ">
-            <button class="btn btn-primary btn-addcompany" *ngIf="!show" (click)="show = !show">Add Company</button> 
-            
+            <button class="btn btn-primary btn-addcompany" *ngIf="!show" (click)="show = !show">Add Company</button>            
     </div> 
 </div>
 <div class="row">

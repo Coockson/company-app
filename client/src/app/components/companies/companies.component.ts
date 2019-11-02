@@ -10,53 +10,7 @@ import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms'
 })
 export class CompaniesComponent implements OnInit {
 
-  company_list : Company[] = [
-    {
-      address: "Some street",
-    city: "Aarhus",
-    country: "Denmark",
-    email: "greatcompany@gmail.com",
-    id: 2,
-    name: "Great Company",
-    phone: "123456"
-    },
-    {
-      address: "Some street",
-    city: "Aarhus",
-    country: "Denmark",
-    email: "greatcompany@gmail.com",
-    id: 2,
-    name: "Great Company",
-    phone: "123456"
-    },
-    {
-      address: "Some street",
-    city: "Aarhus",
-    country: "Denmark",
-    email: "greatcompany@gmail.com",
-    id: 2,
-    name: "Great Company",
-    phone: "123456"
-    },
-    {
-      address: "Some street",
-    city: "Aarhus",
-    country: "Denmark",
-    email: "greatcompany@gmail.com",
-    id: 2,
-    name: "Great Company",
-    phone: "123456"
-    },
-    {
-      address: "Some street",
-    city: "Aarhus",
-    country: "Denmark",
-    email: "greatcompany@gmail.com",
-    id: 2,
-    name: "Great Company",
-    phone: "123456"
-    }
-  ];
+  company_list : Company[];
 
   company: Company;
   show : boolean;
@@ -73,25 +27,7 @@ export class CompaniesComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this.company = new Company();
-    this.companyForm = new FormGroup({
-      'name': new FormControl(this.company.name, [
-        Validators.required    
-      ]),
-      'address': new FormControl(this.company.address, [
-        Validators.required    
-      ]),
-      'id': new FormControl(this.company.id, [
-        Validators.required    
-      ]),
-      'city': new FormControl(this.company.city, [
-        Validators.required    
-      ]),
-      'country': new FormControl(this.company.country, [
-        Validators.required    
-      ])
 
-    });*/
     this.form = this.formBuilder.group({
       
       id  : [null, [Validators.required]],
@@ -99,11 +35,9 @@ export class CompaniesComponent implements OnInit {
       address: [null, [Validators.required]],
       city : [null, [Validators.required]],
       country: [null, [Validators.required]],
-      email: [[null, [Validators.email]]],
-      phone: [null, [Validators.required]]
+      email: [null, [Validators.email]],
+      phone: [null]
     });
-    
-    
 
 
   }

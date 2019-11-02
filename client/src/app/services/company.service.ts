@@ -14,10 +14,6 @@ export class CompanyService {
 
   getCompanies() {
     return this.http.get("/api/companies")
-    //.subscribe(companies => {
-      //console.log((<Company>comp).name);
-      //console.log(comp);
-    //});
   }
 
   addCompany(newCompany){
@@ -35,7 +31,6 @@ export class CompanyService {
   updateCompany(company){
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json');
-    console.log(company);
     return this.http.put("/api/company/"+company._id, JSON.stringify(company), {headers: headers});
   }
 }
